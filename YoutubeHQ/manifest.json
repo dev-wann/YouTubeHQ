@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Highest Quality Adjuster",
+  "description": "Help you enjoy your Youtube videos with the highest quality!",
+  "version": "1.0",
+  "author": "swcho8220@gmail.com",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "images/ythq_16.png"
+  },
+  "content_scripts": [{
+    "js": [
+      "/scripts/content_script.js",
+      "/scripts/selectHQ.js"
+    ],
+    "matches": [
+      "*://*.youtube.com/*"
+    ]
+  }],
+  "background": {
+    "service_worker": "/scripts/service_worker.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "images/ythq_16.png",
+    "32": "images/ythq_32.png",
+    "48": "images/ythq_48.png",
+    "128": "images/ythq_128.png"
+  }
+}
